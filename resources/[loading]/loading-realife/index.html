@@ -1,0 +1,125 @@
+﻿<html>
+<head>
+    <link href="keks.css" rel="stylesheet" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<style>#selector {
+    width: 100%;
+    height: 100%;
+}</style>
+<img src='loadscreen.jpg' id='selector'/>
+<body>
+<audio id="Loading" autoplay loop>
+    <source src="music/Loading.ogg" type="audio/ogg">
+</audio>
+<script>
+    var vid = document.getElementById("Loading");
+    vid.volume = 0.4
+</script>
+
+<div class="letni">
+    <center><h2 title="Chargement...">Chargement...</h2>
+        <center>
+            <div class="loadbar">
+                <div class="thingy"></div>
+            </div>
+            <center>
+                <p class="text">Un Prénom & Nom RP sont obligatoires sous peine de /kick</p>
+                <p class="text">Modifiez votre profil Steam pour changer de Prénom & Nom</p>
+                <p class="text">Règles du serveur sur www.forum.french5.fr</p>
+                <p class="text">Les pseudos injurieux ou racistes seront /ban directement</p>
+                <p class="text">Plus d'infos sur www.french5.fr</p>
+                <p class="text">Amusez vous bien !</p>
+            </center>
+</div>
+
+<script type="text/javascript">
+    // this will actually restart the loading bar a lot, making multiple loading bars is an exercise to the reader... for now.
+    // for a set of possible events, see https://github.com/citizenfx/cfx-client/blob/up-master/components/loading-screens-five/src/LoadingScreens.cpp
+    var count = 0;
+    var thisCount = 0;
+
+    const emoji = {
+        INIT_BEFORE_MAP_LOADED: [''],
+        INIT_AFTER_MAP_LOADED: ['', ''],
+        INIT_SESSION: ['', '', ''],
+    };
+
+    const handlers = {
+        startInitFunctionOrder(data)
+        {
+            count = data.count;
+
+            document.querySelector('.letni h3').innerHTML += emoji[data.type][data.order - 1] || '';
+        },
+
+        initFunctionInvoking(data)
+        {
+            document.querySelector('.thingy').style.left = '0%';
+            document.querySelector('.thingy').style.width = ((data.idx / count) * 100) + '%';
+        },
+
+        startDataFileEntries(data)
+        {
+            count = data.count;
+
+            document.querySelector('.letni h3').innerHTML += "";
+        },
+
+        performMapLoadFunction(data)
+        {
+            ++thisCount;
+
+            document.querySelector('.thingy').style.left = '0%';
+            document.querySelector('.thingy').style.width = ((thisCount / count) * 100) + '%';
+        },
+
+        onLogLine(data)
+        {
+            document.querySelector('.letni p').innerHTML = data.message + "..!";
+        }
+    };
+
+    window.addEventListener('message', function (e) {
+        (handlers[e.data.eventName] || function () {
+        })(e.data);
+    });
+</script>
+
+<!-- Script for the text changer !-->
+<script>
+    (function () {
+        //used for text
+        var text = $(".text");
+        var quoteIndex = -1;
+
+        function showNextQuote() {
+            ++quoteIndex;
+            text.eq(quoteIndex % text.length)
+                    .fadeIn(2000)//fade in time
+                    .delay(2000)//delay time
+                    .fadeOut(2000, showNextQuote);//fase out next quote
+        }
+
+        showNextQuote();
+
+    })();
+    (function () {
+        //Ignore tis function, it is used for the twoquote style
+        var text = $(".text2");
+        var quoteIndex = -1;
+
+        function showNextQuote() {
+            ++quoteIndex;
+            text.eq(quoteIndex % text.length)
+                    .fadeIn(2000)
+                    .delay(2000)
+                    .fadeOut(2000, showNextQuote);
+        }
+
+        showNextQuote();
+
+    })
+</script>
+</body>
+</html>

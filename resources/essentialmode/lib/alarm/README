@@ -1,0 +1,24 @@
+This is an alarm library for Lua 5.2. It depends on alarm, signal, and SIGALRM,
+which should be available in any POSIX system. See for instance`
+	http://www.opengroup.org/onlinepubs/009695399/functions/alarm.html
+
+To try the library, just edit Makefile to reflect your installation of Lua.
+Then run make. This will build the library and run a simple test.
+For detailed installation instructions, see
+	http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/install.html
+
+The library exports a single function, alarm([s,[f]]), which tells Lua to
+call f after s seconds have elapsed. This is done only once. If you want f
+to be called every s seconds, call alarm(s) inside f. Call alarm() without
+arguments or with s=0 to cancel any pending alarm. See test.lua, which
+shows the library in action.
+
+This code is hereby placed in the public domain.
+Please send comments, suggestions, and bug reports to lhf@tecgraf.puc-rio.br .
+
+-------------------------------------------------------------------------------
+
+alarm library:
+ alarm([secs,[func]]) 
+
+-------------------------------------------------------------------------------

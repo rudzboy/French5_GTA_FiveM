@@ -1,0 +1,7 @@
+CitizenMP.Server.exe
+CitizenMP.Server.exe.config
+/hello.png
+/cache/
+/logs/*.log
+/resources/\[local\]/
+/.idea/*

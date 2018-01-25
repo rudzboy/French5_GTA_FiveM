@@ -1,0 +1,103 @@
+<head>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="scripts.js" type="text/javascript"></script>
+    <script src="debounce.min.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+
+<img id="cursor" src="cursor.png">
+<div class="container">
+    <div class="balance">
+    </div>
+    <div class="transaction">
+    </div>
+</div>
+<div class="full-screen">
+    <div class="bank-container">
+        <div class="header">
+            <img src="logo.png" class="logo">
+            <div class="header-right">
+                <h3 class="sans">Bienvenue, <span class="username">Utilisateur</span></h3>
+                <h4 class="sans">Compte bancaire</h4>
+            </div>
+        </div>
+        <div class="body home">
+            <div class="centered">
+                <div class="number-display"><p class="sans">Solde : <span class="currentBalance green"></span></p></div>
+                <a href="#" class="button sans btnWithdraw">Retrait</a>
+                <a href="#" class="button sans btnDeposit">Dépôt</a>
+                <a href="#" class="button sans btnTransfer">Virement</a>
+                <a href="#" class="button sans btnClose">Fermer</a>
+            </div>
+        </div>
+        <div class="body withdraw-container">
+            <div class="form">
+                <form id="withdraw-form">
+                    <input id="amount" type="text" placeholder="Montant" class="sans" required/><br>
+                    <button type="submit" id="submit" class="submit sans">Valider le retrait</button>
+                </form>
+            </div>
+            <div class="centered bottom">
+                <a href="#" class="button sans btnHome">Accueil</a>
+                <a href="#" class="button sans btnClose">Fermer</a>
+            </div>
+        </div>
+        <div class="body deposit-container">
+            <div class="form">
+                <form id="deposit-form">
+                    <input id="amount" type="text" placeholder="Montant" class="sans" required/><br>
+                    <button type="submit" id="submit" class="submit sans">Valider le dépôt</button>
+                </form>
+            </div>
+            <div class="centered bottom">
+                <a href="#" class="button sans btnHome">Accueil</a>
+                <a href="#" class="button sans btnClose">Fermer</a>
+            </div>
+        </div>
+        <div class="body transfer-container">
+            <div class="form">
+                <form id="transfer-form">
+                    <input id="amount" type="text" placeholder="Montant" class="sans" required/><br>
+                    <input id="toPlayer" type="text" placeholder="Bénéficiaire [ID]" class="sans" required/><br>
+                    <button type="submit" id="submit" class="submit sans">Valider le virement</button>
+                </form>
+            </div>
+            <div class="centered bottom2">
+                <a href="#" class="button sans btnHome">Accueil</a>
+                <a href="#" class="button sans btnClose">Fermer</a>
+            </div>
+        </div>
+    </div>
+    <div class="atm-container">
+        <div class="header">
+            <img src="logo.png" class="logo">
+            <div class="header-right">
+                <h3 class="sans">Bienvenue, <span class="username">Utilisateur</span></h3>
+                <h4 class="sans">Distributeur automatique</h4>
+            </div>
+        </div>
+        <div class="body home">
+            <div class="centered">
+                <div class="number-display"><p class="sans">Solde : <span class="currentBalance green"></span></p></div>
+                <a href="#" class="button sans btnWithdraw">Retrait</a>
+                <a href="#" class="button sans btnClose">Fermer</a>
+            </div>
+        </div>
+        <div class="body withdraw-container">
+            <div class="form">
+                <form id="withdraw-atm-form">
+                    <input id="amount" type="text" placeholder="Montant" class="sans" required/><br>
+                    <button type="submit" id="submit" class="submit sans">Valider le retrait</button>
+                </form>
+            </div>
+            <div class="centered bottom3">
+                <a href="#" class="button sans btnHome">Accueil</a>
+                <a href="#" class="button sans btnClose">Fermer</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

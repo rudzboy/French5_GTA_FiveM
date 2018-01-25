@@ -1,0 +1,97 @@
+ListenPort: 30120
+
+PreParseResources:
+    - mapmanager
+
+AutoStartResources:
+#ALWAYS FIRST
+    - mysql-async
+#ESSENTIALS PACK
+    - essentialmode
+    - es_admin
+    - es_freeroam
+    - baseevents
+    - rconlog
+    - chat
+    - hardcap
+    - spawnmanager
+    - fivem-map-skater
+#CUSTOM PACK
+    - activities
+    - ammo
+    - animations
+    - appartments
+    - assets
+    - bahamas
+    - banking
+    - basic_needs
+    - carblacklist
+    - carspawner
+    - carwash
+    - disabledispatch
+    - disablevehicle
+    - disclaimer
+    - docks
+    - emergency
+    - es_weashop
+    - es_lscustoms
+    - es_holdup
+    - es_bank
+    - frfuel
+    - garages
+    - gb_vocal
+    - gcphone
+    - heli
+    - hud_location
+    - interiors
+    - inventory
+    - jobs-system
+    - licences
+    - lastpostodb
+    - loading-realife
+    - mechanic_job
+    - menu
+    - model-menu
+    - moderation
+    - nameOfPlayers
+    - NeverWanted
+    - nocarjack
+    - ooc
+    - paycheck
+    - police
+    - props
+    - safes
+    - shops
+    - speedo
+    - ssa
+    - syncaclwhitlist
+    - vehicule_control
+    - weather
+#UNUSED - KEPT FOR CODE REUSE OR TESTING IN PROGRESS
+#   - truckerjob
+#   - vehcoffre
+    
+# do change
+RconPassword: changethisplease
+
+# configure this, please
+Hostname: Your Bloody FiveM GTA Server
+
+ScriptDebug: true
+
+DebugLog: true
+
+# set to false to hide from the online server list
+Announce: true
+
+# set to false to require players to be signed in to Steam
+DisableAuth: false
+
+# set to true to disable local script hook plugins
+DisableScriptHook: false
+
+# uncomment and set to the path of an icon to use in the server browser. it should be square.
+ServerIcon: hello.png
+
+# don't try enabling this
+#UseGameServerV2: true

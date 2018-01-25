@@ -1,0 +1,87 @@
+#console {
+    color: white;
+    font-size: 24px;
+}
+
+#basic-needs {
+    position: absolute;
+    display: none;
+    left: 15.575%;
+    bottom: 1.95%;
+    width: 36px;
+    height: 17.222222%; /* 186px as 1920/1080 res */
+}
+
+#basic-needs > .bar {
+    display: inline-block;
+    position: relative;
+    width: 9px;
+    height: 100%;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.5);
+}
+
+#basic-needs > .bar#hunger {
+    border-left: 4px solid rgba(0, 0, 0, 0.5);
+    border-right: 2px solid rgba(0, 0, 0, 0.5);
+    background: rgba(241, 110, 0, 0.2);
+}
+
+#basic-needs > .bar#thirst {
+    border-left: 2px solid rgba(0, 0, 0, 0.5);
+    border-right: 4px solid rgba(0, 0, 0, 0.5);
+    background: rgba(0, 156, 255, 0.2);
+    margin-left: -0.25em; /*inline-block space fix*/
+}
+
+#basic-needs > .bar > .value {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 9px;
+}
+
+#basic-needs > .bar#hunger > .value {
+    background: rgba(241, 110, 0, 0.65);
+    height: 0%;
+}
+
+#basic-needs > .bar#thirst > .value {
+    background: rgba(0, 156, 255, 0.65);
+    height: 0%;
+}
+
+@keyframes blink {
+    0% {
+        background-color: rgba(255, 0, 0, 0.65)
+    }
+    50% {
+        background-color: rgba(255, 255, 255, 0)
+    }
+    100% {
+        background-color: rgba(255, 0, 0, 0.65)
+    }
+}
+
+@-webkit-keyframes blink {
+    0% {
+        background-color: rgba(255, 0, 0, 0.65)
+    }
+    50% {
+        background-color: rgba(255, 255, 255, 0)
+    }
+    100% {
+        background-color: rgba(255, 0, 0, 0.65)
+    }
+}
+
+#basic-needs > .bar > .value.blink {
+    -moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    -moz-animation: blink normal 1.2s infinite ease-in-out;
+    -webkit-animation: blink normal 1.2s infinite ease-in-out;
+    -ms-animation: blink normal 1.2s infinite ease-in-out;
+    animation: blink normal 1.2s infinite ease-in-out;
+}

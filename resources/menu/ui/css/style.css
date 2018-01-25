@@ -1,0 +1,200 @@
+/* F5C UI Stylesheet */
+
+@font-face {
+    font-family: 'quincho';
+    src: url('../fonts/quincho.ttf');
+}
+
+@font-face {
+    font-family: 'coolvetica';
+    src: url('../fonts/coolvetica.ttf');
+}
+
+/*
+body{
+  background: url(http://braindamaged.fr/wp-content/uploads/2014/11/Gta-V-ps4-illus3.jpg);
+}
+*/
+
+h1, h2, ul {
+    margin: 0;
+}
+
+h1, h2 {
+    font-family: 'quincho';
+    padding: 15px 25px;
+    font-size: 50px;
+    color: white;
+    background: rgba(27, 168, 224, 0.8);
+    text-shadow: 2px 1px 6px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+#console {
+    color: white;
+    font-size: 24px;
+}
+
+.menu {
+    display: none;
+    position: fixed;
+    top: 200px;
+    left: 20px;
+    width: 300px;
+}
+
+.menu > .info {
+    clear: both;
+    background: rgba(255, 215, 0, 0.6);
+    padding: 10px 15px;
+    height: 28px;
+    color: white;
+    font-family: 'coolvetica';
+    font-size: 22px;
+    text-shadow: 2px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.menu > .info > .label {
+    float: left;
+    width: 70%;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.menu > .info > .position {
+    float: left;
+    width: 30%;
+    text-align: right;
+}
+
+.menu > .content {
+    background: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    max-height: 410px;
+}
+
+.menu > .content > button {
+    display: block;
+    background: transparent;
+    color: white;
+    border: 0;
+    font-size: 18px;
+    font-family: 'Arial';
+    padding: 10px 20px;
+    text-shadow: 2px 1px 6px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    text-align: left;
+    position: relative;
+}
+
+.menu > .content > button.selected {
+    background: rgba(255, 255, 255, 0.88);
+    color: black;
+}
+
+.menu > .content > button[data-menu]:after {
+    content: "\f061";
+    font-family: 'FontAwesome';
+    position: absolute;
+    right: 15px;
+}
+
+.menu > .content > button > span.quantity {
+    position: absolute;
+    right: 15px;
+    color: #efbc00;
+}
+
+.menu > .content > button.selected > span.quantity {
+    color: #9B6700;
+}
+
+#forms > form {
+    display: none;
+    position: fixed;
+    width: 400px;
+    top: 200px;
+    left: 340px;
+}
+
+#forms > form > label {
+    font-family: 'quincho';
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    background: rgba(27, 168, 224, 0.8);
+    text-shadow: 2px 1px 6px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: calc(100% - 20px);
+    display: block;
+}
+
+#forms > form > textarea {
+    width: 100%;
+    border: 0;
+    resize: none;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 1px 6px rgba(0, 0, 0, 0.5);
+    color: white;
+    font-family: 'Arial';
+    font-size: 18px;
+}
+
+#forms > form > textarea::-webkit-input-placeholder {
+    text-shadow: 2px 1px 6px rgba(0, 0, 0, 0.5);
+    color: #ddd;
+    font-family: 'Arial';
+    font-size: 18px;
+}
+
+#forms > form > textarea:focus {
+    outline: 0;
+}
+
+#forms > form > button.submit {
+    display: none;
+}
+
+#aside {
+    position: fixed;
+    top: 200px;
+    right: 45px;
+    width: 310px;
+}
+
+#aside > #phone-messages > .message {
+    display: none;
+    margin: 0 0 10px;
+}
+
+#aside > #phone-messages > .message > .header {
+    font-family: 'quincho';
+    padding: 10px 25px;
+    font-size: 24px;
+    color: white;
+    background: rgba(27, 168, 224, 0.8);
+    text-shadow: 2px 1px 6px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+#aside > #phone-messages > .message > .sender {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 0 8px 15px;
+    color: white;
+    font-family: 'Arial';
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#aside > #phone-messages > .message > .sender > .name {
+    color: rgb(255, 215, 0);
+}
+
+#aside > #phone-messages > .message > .content {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 15px;
+    color: white;
+    font-family: 'Arial';
+    font-size: 18px;
+}

@@ -1,0 +1,255 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="./css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <!--script src="nui://game/ui/jquery.js" type="text/javascript"></script-->
+</head>
+
+<body id="menu-body">
+
+<div id="console"></div>
+
+<div id="main" class="menu">
+    <div class="header">
+        <h1>Menu</h1>
+    </div>
+    <div class="content">
+        <button data-menu="inventory">Inventaire</button>
+        <button data-menu="animations">Animations</button>
+        <button data-menu="citizen">Citoyen</button>
+        <button data-menu="vehicle">Véhicule</button>
+        <button data-menu="equipment">Équipement</button>
+    </div>
+</div>
+
+<div id="animations" class="menu" data-parent="main">
+    <div class="header">
+        <h2>Animations</h2>
+    </div>
+    <div class="content">
+        <button data-event="anim:clear">Arrêter l'animation</button>
+        <button data-menu="animations-attitude">Attitude</button>
+        <button data-menu="animations-humor">Humeur</button>
+        <button data-menu="animations-salute">Saluer</button>
+        <button data-menu="animations-sport">Sport</button>
+        <button data-menu="animations-party">Fête</button>
+    </div>
+</div>
+
+<div id="animations-salute" class="menu" data-parent="animations">
+    <div class="header">
+        <h2>Saluer</h2>
+    </div>
+    <div class="content">
+        <!-- <button data-event="anim:play" data-dict="gestures@m@standing@casual" data-clip="gesture_hello">Dire bonjour</button> -- Animation moins explicite que "Signe de la main" et même utilisation possible -->
+        <button data-event="anim:play" data-dict="friends@frj@ig_1" data-clip="wave_e">Signe de la main</button>
+        <button data-event="anim:play" data-dict="mp_common" data-clip="givetake1_a">Serrer la main</button>
+        <button data-event="anim:play" data-dict="mp_ped_interaction" data-clip="highfive_guy_a">Tapes m'en 5</button>
+        <button data-event="anim:play" data-dict="mp_player_int_uppersalute" data-clip="mp_player_int_salute">Salut militaire</button>
+    </div>
+</div>
+
+<div id="animations-humor" class="menu" data-parent="animations">
+    <div class="header">
+        <h2>Humeur</h2>
+    </div>
+    <div class="content">
+        <button data-event="anim:play" data-dict="gestures@m@standing@casual" data-clip="gesture_pleased">Oui</button>
+        <button data-event="anim:play" data-dict="gestures@m@standing@casual" data-clip="gesture_head_no">Non</button>
+        <button data-event="anim:play" data-dict="gestures@m@standing@casual" data-clip="gesture_no_way">Pas question</button>
+        <button data-event="anim:play" data-dict="mp_player_int_upperwank" data-clip="mp_player_int_wank_01">Branleur</button>
+        <button data-event="anim:play" data-dict="gestures@m@standing@casual" data-clip="gesture_damn">Dammed</button>
+        <button data-event="anim:play" data-dict="gestures@m@standing@casual" data-clip="gesture_easy_now">Calme-toi</button>
+        <button data-event="anim:play" data-dict="mp_player_int_upperfinger" data-clip="mp_player_int_finger_01_enter">Doigts d'honneur</button>
+        <button data-event="anim:play" data-dict="mp_player_intfinger" data-clip="mp_player_int_finger">Faire un doigt</button>
+        <button data-event="anim:play" data-dict="mp_action" data-clip="thanks_male_06">Merci</button>
+        <button data-event="anim:play" data-dict="mp_ped_interaction" data-clip="kisses_guy_a">Faire un câlin</button>
+    </div>
+</div>
+
+<div id="animations-sport" class="menu" data-parent="animations">
+    <div class="header">
+        <h2>Sport</h2>
+    </div>
+    <div class="content">
+        <button data-event="anim:emote" data-dict="WORLD_HUMAN_YOGA">Faire du yoga</button>
+        <button data-event="anim:emote" data-dict="WORLD_HUMAN_JOG_STANDING">Faire du jogging</button>
+        <button data-event="anim:emote" data-dict="WORLD_HUMAN_PUSH_UPS">Faire des pompes</button>
+    </div>
+</div>
+
+<div id="animations-party" class="menu" data-parent="animations">
+    <div class="header">
+        <h2>Fête</h2>
+    </div>
+    <div class="content">
+        <button data-event="anim:emote" data-dict="WORLD_HUMAN_DRINKING">Boire une bière</button>
+        <!-- <button data-event="anim:emote" data-dict="WORLD_HUMAN_STAND_FIRE">Près du feu</button> -- Animation sans intérêt -->
+        <button data-event="anim:emote" data-dict="WORLD_HUMAN_MUSICIAN">Jouer de la musique</button>
+        <button data-event="anim:emote" data-dict="WORLD_HUMAN_PARTYING">Faire la fête</button>
+    </div>
+</div>
+
+<div id="animations-attitude" class="menu" data-parent="animations">
+    <div class="header">
+        <h2>Attitude</h2>
+    </div>
+    <div class="content">
+        <button data-event="anim:emote" data-dict="WORLD_HUMAN_SMOKING">Fumer une cigarette</button>
+        <button data-event="anim:emote" data-dict="WORLD_HUMAN_PICNIC">Assis au sol</button>
+        <button data-event="anim:playLoop" data-dict="nm@hands" data-clip="flail">Écarter les bras</button>
+        <button data-event="anim:emote" data-dict="WORLD_HUMAN_CHEERING">Applaudir</button>
+        <button data-event="anim:emote" data-dict="WORLD_HUMAN_SUNBATHE">Sur le ventre</button>
+        <button data-event="anim:emote" data-dict="WORLD_HUMAN_SUNBATHE_BACK">Sur le dos</button>
+        <button data-event="anim:emote" data-dict="WORLD_HUMAN_STAND_MOBILE">Écrire un sms</button>
+        <button data-event="anim:emote" data-dict="WORLD_HUMAN_MOBILE_FILM_SHOCKING">Prendre une photo</button>
+        <button data-event="anim:emote" data-dict="CODE_HUMAN_MEDIC_TIME_OF_DEATH">Écrire une note</button>
+        <button data-event="anim:emote" data-dict="PROP_HUMAN_BUM_SHOPPING_CART">Accouder au comptoir</button>
+    </div>
+</div>
+
+<div id="citizen" class="menu" data-parent="main">
+    <div class="header">
+        <h1>Citoyen</h1>
+    </div>
+    <div class="content">
+        <button data-form="money-give">Donner de l'argent</button>
+    </div>
+</div>
+
+<div id="inventory" class="menu" data-parent="main">
+    <div class="header">
+        <h1>Inventaire</h1>
+    </div>
+    <div class="content">
+        <button data-menu="inventory-use">Utiliser</button>
+        <button data-menu="inventory-give">Donner</button>
+        <button data-menu="inventory-drop">Supprimer</button>
+    </div>
+</div>
+
+<div id="inventory-use" class="menu" data-parent="inventory">
+    <div class="header">
+        <h2>Inventaire</h2>
+    </div>
+    <div class="info">
+        <div class="label">Utiliser</div>
+        <div class="position">0/0</div>
+    </div>
+    <div class="content">
+        <!-- Filled with JS-->
+    </div>
+</div>
+
+<div id="inventory-give" class="menu" data-parent="inventory">
+    <div class="header">
+        <h2>Inventaire</h2>
+    </div>
+    <div class="info">
+        <div class="label">Donner</div>
+        <div class="position">0/0</div>
+    </div>
+    <div class="content">
+        <!-- Filled with JS-->
+    </div>
+</div>
+
+<div id="inventory-drop" class="menu" data-parent="inventory">
+    <div class="header">
+        <h2>Inventaire</h2>
+    </div>
+    <div class="info">
+        <div class="label">Supprimer</div>
+        <div class="position">0/0</div>
+    </div>
+    <div class="content">
+        <!-- Filled with JS-->
+    </div>
+</div>
+
+<div id="vehicle" class="menu" data-parent="main">
+    <div class="header">
+        <h2>Véhicule</h2>
+    </div>
+    <div class="content">
+        <button data-event="garages:swapLockPersonalVehicle">Ouvrir / verrouiller le véhicule</button>
+    </div>
+</div>
+
+<div id="equipment" class="menu" data-parent="main">
+    <div class="header">
+        <h2>Équipement</h2>
+    </div>
+    <div class="content">
+        <button data-event="menu:wearMask">Mettre un masque</button>
+        <button data-event="menu:removeMask">Retirer un masque</button>
+    </div>
+</div>
+
+<!--
+
+<div id="phone" class="menu" data-parent="main">
+    <div class="header">
+        <h1>Téléphone</h1>
+    </div>
+    <div class="content">
+        <button data-menu="contacts">Contacts</button>
+        <button data-menu="services">Services</button>
+    </div>
+</div>
+
+<div id="contacts" class="menu" data-parent="phone">
+    <div class="header">
+        <h2>Contacts</h2>
+    </div>
+    <div class="info">
+        <div class="label">Répertoire</div>
+        <div class="position">0/0</div>
+    </div>
+    <div class="content">
+    </div>
+</div>
+
+<div id="services" class="menu" data-parent="phone">
+    <div class="header">
+        <h2>Services</h2>
+    </div>
+    <div class="info">
+        <div class="label">Annuaire</div>
+        <div class="position"></div>
+    </div>
+    <div class="content">
+        <button data-form="phone-message" data-receiver="Police" class="permanent">Police </button>
+        <button data-form="phone-message" data-receiver="Ambulance" class="permanent">Secours</button>
+        <button data-form="phone-message" data-receiver="Taxi" class="permanent">Taxi</button>
+        <button data-form="phone-message" data-receiver="Dépanneur" class="permanent">Dépannage</button>
+    </div>
+</div>
+
+-->
+
+<div id="forms">
+    <form id="phone-message" action="phone:sendMessage">
+        <input class="receiver" id="phone-message-receiver" type="hidden" required/>
+        <label for="phone-message-text">Envoyer un message</label>
+        <textarea class="message focus" id="phone-message-text" rows="4" placeholder="Message" required spellcheck="false"></textarea>
+        <button type="submit" class="submit">Envoyer</button>
+    </form>
+
+    <form id="money-give" action="bank:givecash">
+        <label for="phone-message-text">Entrer un montant</label>
+        <textarea class="amount focus" id="give-money-text" rows="4" placeholder="Valeur" required spellcheck="false"></textarea>
+        <button type="submit" class="submit">Valider</button>
+    </form>
+</div>
+
+<div id="aside">
+    <div id="phone-messages">
+        <!-- Filled with JS-->
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="./script.js" type="text/javascript"></script>
+
+</body>

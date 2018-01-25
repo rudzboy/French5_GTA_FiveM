@@ -1,0 +1,4 @@
+USE gta5_gamemode_essential;
+
+ALTER TABLE users ADD hunger SMALLINT(3) NOT NULL DEFAULT 100;
+ALTER TABLE users ADD thirst SMALLINT(3) NOT NULL DEFAULT 100;

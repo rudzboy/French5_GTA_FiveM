@@ -1,0 +1,140 @@
+/* FONTS */
+
+@font-face {
+    font-family: digital;
+    src: url("digital.ttf");
+}
+
+@font-face {
+    font-family: "icons";
+    src: url("icons.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icons:before,
+.icons:after {
+    font-family: "icons";
+    font-size: 20px;
+    font-style: normal;
+    margin: 0 2px;
+}
+
+.danger {
+    margin: 0 0 0 65px;
+}
+
+.danger:before {
+    content: "\f100";
+}
+
+.body:before {
+    content: "\f101";
+}
+
+.tank:before {
+    content: "\f102";
+}
+
+.engine:before {
+    content: "\f103";
+}
+
+/* STYLE */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.speedometer {
+    width: 180px;
+    height: 85px;
+    background-image: url("background.png");
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 4px solid rgba(0, 0, 0, 0.5);
+}
+
+p {
+    margin: 0 auto;
+    font-family: digital;
+}
+
+#container {
+    min-height: 100%;
+}
+
+#speedcontainer {
+    position: absolute;
+    bottom: 17px;
+    left: 17.5%;
+}
+
+.speed {
+    position: absolute;
+    top: -8px;
+    right: 70px;
+    color: #ddd;
+    font-size: 80px;
+}
+
+.unit {
+    position: absolute;
+    top: 28px;
+    right: 3px;
+    color: #ddd;
+    font-size: 36px;
+}
+
+.health {
+    position: absolute;
+    bottom: 2px;
+    left: 4px;
+}
+
+.body.normal:before,
+.tank.normal:before,
+.engine.normal:before {
+    color: #aaa;
+}
+
+.danger.normal:before {
+    color: #000;
+}
+
+.body.light:before,
+.tank.light:before,
+.engine.light:before {
+    color: #efcb00;
+}
+
+.body.heavy:before,
+.tank.heavy:before,
+.engine.heavy:before {
+    color: #f16e00;
+}
+
+.body.critical:before,
+.tank.critical:before,
+.engine.critical:before {
+    color: #e10011;
+}
+
+.danger.critical:before {
+    color: #f16e00;
+    animation: blink-animation 0.4s steps(5, start) infinite;
+    -webkit-animation: blink-animation 0.4s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}

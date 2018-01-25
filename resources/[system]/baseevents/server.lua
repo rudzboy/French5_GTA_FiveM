@@ -1,0 +1,17 @@
+RegisterServerEvent('baseevents:onPlayerDied')
+RegisterServerEvent('baseevents:onPlayerKilled')
+RegisterServerEvent('baseevents:onPlayerWasted')
+RegisterServerEvent('baseevents:enteringVehicle')
+RegisterServerEvent('baseevents:enteringAborted')
+RegisterServerEvent('baseevents:enteredVehicle')
+RegisterServerEvent('baseevents:leftVehicle')
+
+AddEventHandler('baseevents:onPlayerKilled', function(killedBy, data)
+    -- RconLog({msgType = 'playerKilled', victim = victim, attacker = killedBy, data = data})
+    TriggerEvent('Slog', '[KILL] killer: '..killedBy..', dead: '..source)
+end)
+
+AddEventHandler('baseevents:onPlayerDied', function(killedBy, pos)
+    -- RconLog({msgType = 'playerDied', victim = victim, attackerType = killedBy, pos = pos})
+    TriggerEvent('Slog', '[DEATH] dead: '..source)
+end)
